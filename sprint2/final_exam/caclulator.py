@@ -1,28 +1,44 @@
-# id посылки 75206565
+# id посылки 75236442
+# Переписал основательно =) хотя ты просил просто добавить вызов функции в словарь)
+# Убрал 8 строчек if'ов и добавил еще больше ) Скажи, если это было лишним.
 from typing import List
 
 
-def get_polish_notation_result(polish_notation_list: List[str]) -> int:
-    '''Возвращает результат выражения с обратной польской нотацией.'''
+class Stack():
+    '''Стек для хранения чисел.'''
 
-    stack = []
-    for value in polish_notation_list:
-        if value.isdigit() or value[1:].isdigit():
-            stack.append(int(value))
-        if value == '+':
-            values_sum = stack.pop() + stack.pop()
-            stack.append(values_sum)
-        if value == '-':
-            values_diff = stack.pop(-2) - stack.pop()
-            stack.append(values_diff)
-        if value == '*':
-            values_product = stack.pop() * stack.pop()
-            stack.append(values_product)
-        if value == '/':
-            values_quotient = stack.pop(-2) // stack.pop()
-            stack.append(values_quotient)
+    def __init__(self) -> None:
+        self.stack = []
 
-    return stack[-1]
+    def get_values_sum(self):
+        return self.stack.pop() + self.stack.pop()
+
+    def get_values_diff(self):
+        return self.stack.pop(-2) - self.stack.pop()
+
+    def get_values_product(self):
+        return self.stack.pop() * self.stack.pop()
+
+    def get_values_quotient(self):
+        return self.stack.pop(-2) // self.stack.pop()
+
+    def get_polish_notation_result(self, polish_notation_list: List[str]) -> int:
+        '''Возвращает результат выражения с обратной польской нотацией.'''
+
+        operations_dict = {
+            '+': self.get_values_sum,
+            '-': self.get_values_diff,
+            '*': self.get_values_product,
+            '/': self.get_values_quotient
+        }
+        for value in polish_notation_list:
+            #  value[1:] - для отрицательных значений, проверка на число не учитывая'-'.
+            if value.isdigit() or value[1:].isdigit():
+                self.stack.append(int(value))
+            if value in operations_dict.keys():
+                self.stack.append(operations_dict[value]())
+
+        return self.stack[-1]
 
 
 def read_input() -> List[str]:
@@ -33,4 +49,5 @@ def read_input() -> List[str]:
 
 if __name__ == '__main__':
     polish_notation_list = read_input()
-    print(get_polish_notation_result(polish_notation_list))
+    stack = Stack()
+    print(stack.get_polish_notation_result(polish_notation_list))
