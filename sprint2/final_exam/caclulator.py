@@ -1,6 +1,4 @@
 # id посылки 75236442
-# Переписал основательно =) хотя ты просил просто добавить вызов функции в словарь)
-# Убрал 8 строчек if'ов и добавил еще больше ) Скажи, если это было лишним.
 from typing import List
 
 
@@ -10,33 +8,22 @@ class Stack():
     def __init__(self) -> None:
         self.stack = []
 
-    def get_values_sum(self):
-        return self.stack.pop() + self.stack.pop()
-
-    def get_values_diff(self):
-        return self.stack.pop(-2) - self.stack.pop()
-
-    def get_values_product(self):
-        return self.stack.pop() * self.stack.pop()
-
-    def get_values_quotient(self):
-        return self.stack.pop(-2) // self.stack.pop()
-
     def get_polish_notation_result(self, polish_notation_list: List[str]) -> int:
         '''Возвращает результат выражения с обратной польской нотацией.'''
 
         operations_dict = {
-            '+': self.get_values_sum,
-            '-': self.get_values_diff,
-            '*': self.get_values_product,
-            '/': self.get_values_quotient
+            '+': lambda x2, x1: x2 + x1,
+            '-': lambda x2, x1: x2 - x1,
+            '*': lambda x2, x1: x2 * x1,
+            '/': lambda x2, x1: x2 // x1
         }
         for value in polish_notation_list:
             #  value[1:] - для отрицательных значений, проверка на число не учитывая'-'.
             if value.isdigit() or value[1:].isdigit():
                 self.stack.append(int(value))
             if value in operations_dict.keys():
-                self.stack.append(operations_dict[value]())
+                x2, x1 = self.stack.pop(-2), self.stack.pop()
+                self.stack.append(operations_dict[value](x2, x1))
 
         return self.stack[-1]
 
