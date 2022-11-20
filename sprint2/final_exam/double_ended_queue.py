@@ -1,4 +1,4 @@
-# id посылки 75242804
+# id посылки 75512857
 from typing import List
 
 
@@ -24,12 +24,12 @@ class Deque:
         self.__tail_back = 0
         self.__size_queue = 0
 
-    def is_empty(self):
+    def is_empty(self) -> bool:
         '''Определяет, пуста ли очередь'''
 
         return self.__size_queue == 0
 
-    def push_front(self, x):
+    def push_front(self, x) -> None:
         '''Добавляет число x в начало очереди.'''
 
         if self.__size_queue != self.__max_size:
@@ -45,7 +45,7 @@ class Deque:
         else:
             raise DequeOverFlowError('error')
 
-    def push_back(self, x):
+    def push_back(self, x) -> None:
         '''Добавляет число x в конец очереди.'''
 
         if self.__size_queue != self.__max_size:
@@ -61,7 +61,7 @@ class Deque:
         else:
             raise DequeOverFlowError('error')
 
-    def pop_front(self):
+    def pop_front(self) -> int:
         '''Удаляет число из начала очереди и выводит на печать.'''
 
         if self.is_empty():
@@ -77,7 +77,7 @@ class Deque:
         self.__tail_back = (self.__tail_back - 1) % self.__max_size
         return x
 
-    def pop_back(self):
+    def pop_back(self) -> int:
         '''Удаляет число с конца очереди и выводит на печать.'''
 
         if self.is_empty():
@@ -108,26 +108,15 @@ if __name__ == '__main__':
     max_size_queue, commands = read_input()
     queue = Deque(max_size_queue)
     for command in commands:
-        if command[0] == 'push_front':
-            try:
+        try:
+            if command[0] == 'push_front':
                 queue.push_front(int(command[1]))
-            except DequeOverFlowError as error:
-                print(error)
-
-        if command[0] == 'push_back':
-            try:
+            if command[0] == 'push_back':
                 queue.push_back(int(command[1]))
-            except DequeOverFlowError as error:
-                print(error)
-
-        if command[0] == 'pop_front':
-            try:
+            if command[0] == 'pop_front':
                 print(queue.pop_front())
-            except RuntimeError as error:
-                print(error)
-
-        if command[0] == 'pop_back':
-            try:
+            if command[0] == 'pop_back':
                 print(queue.pop_back())
-            except RuntimeError as error:
-                print(error)
+
+        except (DequeOverFlowError, RuntimeError) as error:
+            print(error)
