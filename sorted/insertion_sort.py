@@ -8,7 +8,7 @@ def insertion_sort(array: List[int]) -> None:
     Каждую итерацию выводит на печать.
     '''
 
-    for i in range(len(array)):
+    for i in range(1, len(array)):
         item_to_insert = array[i]
         j = i
         while j > 0 and item_to_insert < array[j - 1]:
