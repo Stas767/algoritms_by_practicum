@@ -1,3 +1,5 @@
+# id посылки 78822597
+
 import random
 from typing import List, Tuple
 
