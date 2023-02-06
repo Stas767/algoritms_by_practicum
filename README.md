@@ -2,13 +2,13 @@
 
 Решение задач по алгоритмам на Python.
 
----
+
 
 ## 1. Введение в алгоритмы (sprint1)
 
 [contest.yandex.ru](https://contest.yandex.ru/contest/23389/problems/)
 
----
+
 
 <details>
 <summary>
@@ -59,8 +59,6 @@
 </tbody></table>
 
 </details>
-
-------
 
 <details>
 <summary>
@@ -120,8 +118,6 @@ WIN<br>
 </tbody></table>
 
 </details>
-
----
 
 <details>
 <summary>
@@ -188,9 +184,6 @@ WIN<br>
 
 </details>
 
-------
-
-
 <details>
 <summary>
 <b>D. Хаотичность погоды (<a href="sprint1/chaos_wather.py">chaos_wather.py</a>)</b>
@@ -248,8 +241,6 @@ WIN<br>
 </tbody></table>
 
 </details>
-
-----
 
 <details>
 <summary>
@@ -311,8 +302,6 @@ jumps<br>
 
 </details>
 
-----
-
 <details>
 <summary>
 <b>F. Палиндром (<a href="sprint1/palindrom.py">palindrom.py</a>)</b>
@@ -367,8 +356,6 @@ False<br>
 
 </details>
 
-----
-
 <details>
 <summary>
 <b>G. Работа из дома (<a href="sprint1/binary.py">binary.py</a>)</b>
@@ -422,8 +409,6 @@ False<br>
 </tbody></table>
 
 </details>
-
-----
 
 <details>
 <summary>
@@ -484,8 +469,6 @@ False<br>
 
 </details>
 
-----
-
 <details>
 <summary>
 <b>I. Степень четырёх (<a href="sprint1/degree_four.py">degree_four.py</a>)</b>
@@ -538,8 +521,6 @@ True<br>
 </tbody></table>
 
 </details>
-
-----
 
 <details>
 <summary>
@@ -597,8 +578,6 @@ True<br>
 </tbody></table>
 
 </details>
-
-----
 
 <details>
 <summary>
@@ -661,63 +640,6 @@ True<br>
 
 </details>
 
-----
-
-<details>
-<summary>
-<b>L. Лишняя буква (<a href="sprint1/extra_latter.py">extra_latter.py</a>)</b>
-</summary>
-
-#### Условие
-Васе очень нравятся задачи про строки, поэтому он придумал свою. Есть 2 строки s и t, состоящие только из строчных букв. Строка t получена перемешиванием букв строки s и добавлением 1 буквы в случайную позицию. Нужно найти добавленную букву.
-
-#### Формат ввода
-На вход подаются строки s и t, разделённые переносом строки. Длины строк не превосходят 1000 символов. Строки не бывают пустыми.
-
-#### Формат вывода
-Выведите лишнюю букву.
-
-#### Пример 1
-<table><tbody>
-  <tr>
-    <td><b>Ввод</b></td>
-    <td><b>Вывод</b></td>
-  </tr>
-  <tr>
-    <td valign='top'>
-abcd<br>
-abcde<br>
-    
-
-</td>
-  <td valign='top'>
-e<br>
-</td>
-  </tr>
-</tbody></table>
-
-#### Пример 2
-<table><tbody>
-  <tr>
-    <td><b>Ввод</b></td>
-    <td><b>Вывод</b></td>
-  </tr>
-  <tr>
-    <td valign='top'>
-go<br>
-ogg<br>
-
-</td>
-  <td valign='top'>
-g<br>
-</td>
-  </tr>
-</tbody></table>
-
-</details>
-
-----
-
 <details>
 <summary>
 <b>L. Лишняя буква (<a href="sprint1/extra_latter.py">extra_latter.py</a>)</b>
@@ -773,11 +695,11 @@ g<br>
 
 ---
 
-#### Финальные задачи спринта (sprint1)
+#### Финальные задачи спринта (final_exam)
 
 [contest.yandex.ru](https://contest.yandex.ru/contest/23390/problems/)
 
-----
+---
 
 <details>
 <summary>
@@ -836,8 +758,6 @@ g<br>
 </tbody></table>
 
 </details>
-
-----
 
 <details>
 <summary>
